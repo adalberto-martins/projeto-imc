@@ -47,7 +47,7 @@ function verificar() {
         }
 
         res.style.textAlign = 'center'
-        res.innerHTML = `${nome} Detectamos ${genero} com ${idade} anos. Está ${mensagemIMC}`
+        res.innerHTML = `${nome} Detectamos ${genero} com ${idade} anos. seu Imc e ${imc} Você Está ${mensagemIMC}`
         res.appendChild(img)
     }
 }
