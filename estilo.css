@@ -14,10 +14,7 @@ section {
 }
 
 div {
-    background-image: url(imagens/fundo.png);
-    text-align: center;
-    display: block;
-    color: white;
+    display: block;   
     width: 600px;
     height: 220px;
     margin: auto;
@@ -25,8 +22,6 @@ div {
 }
 
 div#res {
-    background-image: url(imagens/download.jpg);
-    background-size: cover;
     display: block;
     margin: auto;
     padding: 10px;
