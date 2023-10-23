@@ -14,9 +14,8 @@ section {
 }
 
 div {
+    text-align: center;
     display: block;   
-    width: 600px;
-    height: 220px;
     margin: auto;
     padding: 10px;
 }
