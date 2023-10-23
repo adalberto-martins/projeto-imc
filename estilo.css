@@ -1,2 +1,45 @@
 @charset "UTF-8";
 
+body { 
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    text-align: center;
+}
+
+section {
+    
+
+}
+
+div {
+    background-image: url(imagens/fundo.png);
+    text-align: center;
+    display: block;
+    color: white;
+    width: 600px;
+    height: 220px;
+    margin: auto;
+    padding: 10px;
+}
+
+div#res {
+    background-image: url(imagens/download.jpg);
+    background-size: cover;
+    display: block;
+    margin: auto;
+    padding: 10px;
+}
+
+img#foto {
+    display: block;
+    margin: auto;
+    padding: 10px;
+}
+
+footer {
+
+}
+
+
