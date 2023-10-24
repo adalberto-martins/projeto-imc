@@ -44,8 +44,8 @@ function verificar() {
             mensagemIMC = 'Obesidade grau II'
             img.setAttribute('src', genero === 'Homem' ? 'imagens/obesidade_homem.png' : 'imagens/obesidade_mulher.png')
             alert('Obesidade grau II')        
-        } else (imc >= 40) {
-            mensagemIMC = 'Obesidade Morbida';
+        } else  {
+            mensagemIMC = 'Obesidade Morbida'
             img.setAttribute('src', genero === 'Homem' ? 'imagens/obesidademorbida_homem.png' : 'imagens/obesidademorbida_mulher.png')
             alert('Obesidade Morbida')
         }
