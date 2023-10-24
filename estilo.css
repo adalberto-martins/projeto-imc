@@ -18,6 +18,7 @@ div {
     display: block;   
     margin: auto;
     padding: 10px;
+    
 }
 
 div#res {
@@ -33,7 +34,10 @@ img#foto {
 }
 
 footer {
-
+    background-color: black;
+    color: white;
+    text-align: center;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.579);
 }
 
 
