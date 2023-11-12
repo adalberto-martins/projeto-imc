@@ -5,6 +5,8 @@ function verificar() {
     var res = document.getElementById('res')
     var nome = document.getElementById('txtnome').value
     var peso = parseFloat(document.getElementById('ipeso').value)
+    
+
     var nalt = parseFloat(document.getElementById('nalt').value)
     var imc = peso / (nalt * nalt)
     var mensagemIMC = ''
