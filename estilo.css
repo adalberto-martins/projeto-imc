@@ -2,8 +2,14 @@
 
 body { 
     font-family: Arial, Helvetica, sans-serif;
+    
 }
 
+h1 {
+    font-size: 45px;
+    color: yellowgreen;
+    
+}
 header {
     text-align: center;
 }
@@ -13,6 +19,7 @@ section {
 }
 
 div {
+    Background-color: green;
     text-align: center;
     display: block;   
     margin: auto;
@@ -34,7 +41,7 @@ img#foto {
 
 footer {
     background-color: black;
-    color: white;
+    color: blue;
     text-align: center;
     text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.579);
 }
