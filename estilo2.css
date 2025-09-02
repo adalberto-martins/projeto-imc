@@ -1,35 +1,65 @@
 @charset "UTF-8";
 
-/* Estilos gerais */
+:root {
+    /* Cores do Tema Claro (Padrão) */
+    --cor-fundo-claro: #eef2f5;
+    --cor-card-claro: #ffffff;
+    --cor-texto-claro: #34495e;
+    --cor-borda-claro: #dee2e6;
+
+    /* Cores do Tema Escuro */
+    --cor-fundo-escuro: #121212;
+    --cor-card-escuro: #1e1e1e;
+    --cor-texto-escuro: #e0e0e0;
+    --cor-texto-secundario-escuro: #a0a0a0;
+    --cor-borda-escuro: #333333; /* Usado para campos e divisores */
+
+    /* Cores de Destaque */
+    --cor-acento-principal: #bb86fc; /* Roxo */
+    --cor-acento-principal-hover: #a567f2; /* Roxo mais escuro no hover */
+
+    /* Sombra */
+    --sombra-clara: rgba(0, 0, 0, 0.1);
+    --sombra-escura: rgba(0, 0, 0, 0.4); /* Ainda mantida para alguns elementos se necessário */
+}
+
+/* Estilos gerais - Tema Claro (Padrão) */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #eef2f5;
+    background-color: var(--cor-fundo-claro);
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    color: var(--cor-texto-claro);
+    transition: background-color 0.5s, color 0.5s;
 }
 
 /* Cabeçalho */
 header {
-    background-color: #2c3e50;
-    color: #ecf0f1;
+    background-color: var(--cor-card-claro);
+    color: var(--cor-texto-claro);
     padding: 20px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px var(--sombra-clara);
+    transition: background-color 0.5s, color 0.5s, box-shadow 0.5s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header h1 {
     margin: 0;
     font-size: 2.2em;
+    color: var(--cor-acento-principal);
 }
 
 /* Seção principal */
 section {
-    background-color: #ffffff;
+    background-color: var(--cor-card-claro);
     border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px var(--sombra-clara);
     margin: 30px auto;
     padding: 30px;
     width: 90%;
@@ -37,17 +67,19 @@ section {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    transition: background-color 0.5s, box-shadow 0.5s, border 0.5s; /* Adicionado border para transição */
 }
 
 /* Contêiner de entrada de dados */
 section > div:first-child {
     background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
+    border: 1px solid var(--cor-borda-clara);
     border-radius: 8px;
     padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 15px;
+    transition: background-color 0.5s, border-color 0.5s;
 }
 
 /* Estilo para parágrafos e campos */
@@ -56,39 +88,52 @@ p {
     display: flex;
     align-items: center;
     gap: 10px;
+    color: var(--cor-texto-claro);
+    transition: color 0.5s;
 }
 
 .campo {
     flex-grow: 1;
     padding: 10px;
     border: 1px solid #ccc;
+    background-color: var(--cor-card-claro);
+    color: var(--cor-texto-claro);
     border-radius: 6px;
     font-size: 1em;
-    transition: border-color 0.3s, box-shadow 0.3s;
+    transition: border-color 0.3s, box-shadow 0.3s, background-color 0.5s, color 0.5s;
 }
 
 .campo:focus {
-    border-color: #3498db;
-    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+    border-color: var(--cor-acento-principal);
+    box-shadow: 0 0 5px var(--cor-acento-principal);
     outline: none;
 }
 
 input[type="button"] {
-    background-color: #3498db;
-    color: #ffffff;
+    background-color: var(--cor-acento-principal);
+    color: var(--cor-fundo-claro); /* Cor do texto do botão no tema claro */
     cursor: pointer;
     font-weight: bold;
     border: none;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, color 0.5s;
 }
 
 input[type="button"]:hover {
-    background-color: #2980b9;
+    background-color: var(--cor-acento-principal-hover);
 }
 
-/* Estilo para os botões de rádio */
-input[type="radio"] {
-    margin-right: 5px;
+/* Estilo para o botão de tema */
+#botao-tema {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: var(--cor-texto-claro);
+    transition: color 0.5s;
+}
+
+#botao-tema:hover {
+    color: var(--cor-acento-principal);
 }
 
 /* Contêiner de resultado */
@@ -99,9 +144,10 @@ input[type="radio"] {
     text-align: center;
     font-size: 1.1em;
     font-weight: 500;
-    color: #34495e;
+    color: var(--cor-texto-claro);
     line-height: 1.6;
     margin-top: 10px;
+    transition: background-color 0.5s, color 0.5s;
 }
 
 /* Contêiner da foto */
@@ -111,7 +157,8 @@ input[type="radio"] {
     overflow: hidden;
     border-radius: 50%;
     margin: 20px auto 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px var(--sombra-clara);
+    transition: box-shadow 0.5s, border 0.5s; /* Adicionado border para transição */
 }
 
 img#foto {
@@ -125,11 +172,86 @@ footer {
     text-align: center;
     padding: 15px;
     margin-top: auto;
-    background-color: #2c3e50;
-    color: #95a5a6;
+    background-color: var(--cor-card-claro);
+    color: var(--cor-texto-claro);
     font-size: 0.9em;
+    transition: background-color 0.5s, color 0.5s;
 }
 
 footer p {
     margin: 0;
 }
+
+/* Estilos para o tema escuro */
+body.escuro {
+    background-color: var(--cor-fundo-escuro);
+    color: var(--cor-texto-escuro);
+}
+
+body.escuro header {
+    background-color: var(--cor-card-escuro);
+    box-shadow: none; /* Removendo sombra no tema escuro */
+    border-bottom: 1px solid white; /* Adicionando borda no header */
+}
+
+body.escuro header h1 {
+    color: var(--cor-acento-principal);
+}
+
+body.escuro section {
+    background-color: var(--cor-card-escuro);
+    box-shadow: none; /* Removendo sombra no tema escuro */
+    border: 1px solid white; /* Adicionando borda */
+}
+
+body.escuro section > div:first-child {
+    background-color: #242424;
+    border: 1px solid var(--cor-borda-escuro);
+    color: var(--cor-texto-escuro);
+}
+
+body.escuro p {
+    color: var(--cor-texto-secundario-escuro);
+}
+
+body.escuro .campo {
+    background-color: #2b2b2b;
+    color: var(--cor-texto-escuro);
+    border-color: var(--cor-borda-escuro);
+}
+
+body.escuro .campo:focus {
+    border-color: var(--cor-acento-principal);
+    box-shadow: 0 0 5px var(--cor-acento-principal);
+}
+
+body.escuro input[type="button"] {
+    background-color: var(--cor-acento-principal);
+    color: var(--cor-fundo-escuro);
+}
+
+body.escuro input[type="button"]:hover {
+    background-color: var(--cor-acento-principal-hover);
+}
+
+body.escuro #botao-tema {
+    color: var(--cor-texto-secundario-escuro);
+}
+
+body.escuro #res {
+    background-color: #242424;
+    color: var(--cor-texto-escuro);
+}
+
+body.escuro .foto-container {
+    box-shadow: none; /* Removendo sombra no tema escuro */
+    border: 1px solid white; /* Adicionando borda branca */
+}
+
+body.escuro footer {
+    background-color: var(--cor-card-escuro);
+    color: var(--cor-texto-secundario-escuro);
+    box-shadow: none;
+    border-top: 1px solid white;
+}
+
