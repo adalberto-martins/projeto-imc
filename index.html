@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="estilo2.css">
     <title>IMC</title>
 </head>
 <body>
@@ -14,19 +14,19 @@
     <section>
         <div>
             <p>Nome
-                <input type="text" name="txtnome" id="txtnome">
+                <input type="text" name="txtnome" id="txtnome" class="campo">
                 <label for="txtnome"></label>
             </p>
             <p>Peso (kg)
-                <Input type="number" name="npeso" id="ipeso" placeholder="Ex: 70">
+                <Input type="number" name="npeso" id="ipeso" class="campo" placeholder="Ex: 70">
                 <label for="ipeso"></label>
             </p>
             <p>Altura (m)
-                <input type="number" name="nalt" id="nalt" pattern="^\d{1}.\d{2}$" placeholder="Ex: 1.70">
+                <input type="number" name="nalt" id="nalt" class="campo" pattern="^\d{1}.\d{2}$" placeholder="Ex: 1.70">
                 <label for="nalt"></label>
             </p>
             <p>Ano do Nascimento:
-                <input type="number" name="txtano" id="txtano" placeholder=" Ex: 1900">
+                <input type="number" name="txtano" id="txtano"  class="campo"placeholder=" Ex: 1900">
                 <label for="txtano"></label>
             </p>
             <p>
@@ -37,7 +37,7 @@
                 <label for="fem">Feminino</label>
             </p>
             <p>
-                <input type="button" value="Verificar" onclick="verificar()">
+                <input type="button" value="Verificar" class="campo" onclick="verificar()">
                
             </p>
 
@@ -49,6 +49,6 @@
     <footer>
         <p>Criado Adalberto Martins&copy;</p>
     </footer>
-    <script src="script.js"></script> 
+    <script src="script2.js"></script> 
 </body>
 </html>
