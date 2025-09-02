@@ -5,22 +5,14 @@
     --cor-fundo-claro: #eef2f5;
     --cor-card-claro: #ffffff;
     --cor-texto-claro: #34495e;
-    --cor-borda-claro: #dee2e6;
-
-    /* Cores do Tema Escuro */
-    --cor-fundo-escuro: #121212;
-    --cor-card-escuro: #1e1e1e;
-    --cor-texto-escuro: #e0e0e0;
-    --cor-texto-secundario-escuro: #a0a0a0;
-    --cor-borda-escuro: #333333; /* Usado para campos e divisores */
-
-    /* Cores de Destaque */
+    --cor-borda-clara: #dee2e6;
+    
+    /* Cores de Destaque - Tema Claro (Roxo) */
     --cor-acento-principal: #bb86fc; /* Roxo */
     --cor-acento-principal-hover: #a567f2; /* Roxo mais escuro no hover */
 
     /* Sombra */
     --sombra-clara: rgba(0, 0, 0, 0.1);
-    --sombra-escura: rgba(0, 0, 0, 0.4); /* Ainda mantida para alguns elementos se necessário */
 }
 
 /* Estilos gerais - Tema Claro (Padrão) */
@@ -41,7 +33,6 @@ header {
     background-color: var(--cor-card-claro);
     color: var(--cor-texto-claro);
     padding: 20px;
-    text-align: center;
     box-shadow: 0 4px 8px var(--sombra-clara);
     transition: background-color 0.5s, color 0.5s, box-shadow 0.5s;
     display: flex;
@@ -67,7 +58,7 @@ section {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    transition: background-color 0.5s, box-shadow 0.5s, border 0.5s; /* Adicionado border para transição */
+    transition: background-color 0.5s, box-shadow 0.5s, border 0.5s;
 }
 
 /* Contêiner de entrada de dados */
@@ -111,7 +102,7 @@ p {
 
 input[type="button"] {
     background-color: var(--cor-acento-principal);
-    color: var(--cor-fundo-claro); /* Cor do texto do botão no tema claro */
+    color: var(--cor-fundo-claro);
     cursor: pointer;
     font-weight: bold;
     border: none;
@@ -158,7 +149,7 @@ input[type="button"]:hover {
     border-radius: 50%;
     margin: 20px auto 0;
     box-shadow: 0 4px 8px var(--sombra-clara);
-    transition: box-shadow 0.5s, border 0.5s; /* Adicionado border para transição */
+    transition: box-shadow 0.5s, border 0.5s;
 }
 
 img#foto {
@@ -182,16 +173,29 @@ footer p {
     margin: 0;
 }
 
-/* Estilos para o tema escuro */
+/* Estilos para o tema escuro (Sobrescrevendo o tema claro) */
 body.escuro {
-    background-color: var(--cor-fundo-escuro);
-    color: var(--cor-texto-escuro);
+    /* Cores de fundo e texto */
+    background-color: #121212;
+    color: #e0e0e0;
+    
+    /* Cores do Tema Escuro */
+    --cor-fundo-escuro: #121212;
+    --cor-card-escuro: #1e1e1e;
+    --cor-texto-escuro: #e0e0e0;
+    --cor-texto-secundario-escuro: #a0a0a0;
+    --cor-borda-escuro: #333333;
+    --sombra-escura: rgba(0, 0, 0, 0.4);
+
+    /* Cores de Destaque - Tema Escuro (Laranja) */
+    --cor-acento-principal: #ff9800; /* Laranja vibrante */
+    --cor-acento-principal-hover: #f57c00; /* Laranja mais escuro no hover */
 }
 
 body.escuro header {
-    background-color: var(--cor-card-escuro);
-    box-shadow: none; /* Removendo sombra no tema escuro */
-    border-bottom: 1px solid white; /* Adicionando borda no header */
+    background-color: #1e1e1e;
+    box-shadow: none;
+    border-bottom: 1px solid white;
 }
 
 body.escuro header h1 {
@@ -199,24 +203,24 @@ body.escuro header h1 {
 }
 
 body.escuro section {
-    background-color: var(--cor-card-escuro);
-    box-shadow: none; /* Removendo sombra no tema escuro */
-    border: 1px solid white; /* Adicionando borda */
+    background-color: #1e1e1e;
+    box-shadow: none;
+    border: 1px solid white;
 }
 
 body.escuro section > div:first-child {
     background-color: #242424;
     border: 1px solid var(--cor-borda-escuro);
-    color: var(--cor-texto-escuro);
+    color: #e0e0e0;
 }
 
 body.escuro p {
-    color: var(--cor-texto-secundario-escuro);
+    color: #a0a0a0;
 }
 
 body.escuro .campo {
     background-color: #2b2b2b;
-    color: var(--cor-texto-escuro);
+    color: #e0e0e0;
     border-color: var(--cor-borda-escuro);
 }
 
@@ -235,22 +239,26 @@ body.escuro input[type="button"]:hover {
 }
 
 body.escuro #botao-tema {
-    color: var(--cor-texto-secundario-escuro);
+    color: #a0a0a0;
+}
+
+body.escuro #botao-tema:hover {
+    color: var(--cor-acento-principal);
 }
 
 body.escuro #res {
     background-color: #242424;
-    color: var(--cor-texto-escuro);
+    color: #e0e0e0;
 }
 
 body.escuro .foto-container {
-    box-shadow: none; /* Removendo sombra no tema escuro */
-    border: 1px solid white; /* Adicionando borda branca */
+    box-shadow: none;
+    border: 1px solid white;
 }
 
 body.escuro footer {
-    background-color: var(--cor-card-escuro);
-    color: var(--cor-texto-secundario-escuro);
+    background-color: #1e1e1e;
+    color: #a0a0a0;
     box-shadow: none;
     border-top: 1px solid white;
 }
