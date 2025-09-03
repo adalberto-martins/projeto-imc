@@ -1,3 +1,27 @@
+const botao = document.getElementById('botao-tema');
+const body = document.body;
+
+// Persistência do tema
+const temasalvo = localStorage.getItem('tema');
+temaEscuro(temasalvo === 'escuro');
+
+// Função para alternar entre tema claro e escuro
+function temaEscuro(tipo) {
+  if (tipo == true) {
+    body.classList.add('escuro');
+    botao.innerHTML = '<i class="fa-solid fa-sun"></i>';
+  } else {
+    body.classList.remove('escuro');
+    botao.innerHTML = '<i class="fa-solid fa-moon"></i>';
+  }
+}
+
+botao.addEventListener('click', () => {
+  const isescuro = body.classList.toggle('escuro');
+  temaEscuro(isescuro);
+  localStorage.setItem('tema', isescuro ? 'escuro' : 'claro');
+});
+
 function verificar() {
     var data = new Date()
     var ano = data.getFullYear()
@@ -54,6 +78,9 @@ function verificar() {
 
         res.style.textAlign = 'center'
         res.innerHTML = `Detectamos ${nome}, ${genero} com ${idade} anos. <br/>seu Imc e ${imc.toFixed(2)} Você Está ${mensagemIMC}`
-        res.appendChild(img)
+        var divFoto = document.createElement('div');
+        divFoto.setAttribute('class', 'foto-container');
+        divFoto.appendChild(img);
+        res.appendChild(divFoto);
     }
 }

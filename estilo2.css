@@ -173,10 +173,6 @@ footer {
     transition: background-color 0.5s, color 0.5s;
 }
 
-footer p {
-    margin: 0;
-}
-
 /* Estilos para o tema escuro (Sobrescrevendo o tema claro) */
 body.escuro {
     /* Cores de fundo e texto */

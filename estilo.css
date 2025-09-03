@@ -1,53 +1,189 @@
 @charset "UTF-8";
 
-body { 
-    font-family: Arial, Helvetica, sans-serif;
-    
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
 }
 
-h1 {
-    font-size: 45px;
-    color: yellowgreen;
-    
+:root {
+    --cor-fundo: #eef2f5;
+    --cor-card: #ffffff;
+    --cor-texto: #34495e;
+    --cor-borda: #dee2e6;
+    --cor-acento-principal: #bb86fc;
+    --cor-acento-principal-hover: #a567f2;
+    --cor-div:#f8f9fa;
+    --cor-res:#ecf0f1;
+    --cor-border-campo:#ccc;
+    --sombra: rgba(0, 0, 0, 0.1);
 }
+
+body.escuro {
+    --cor-fundo: #121212;
+    --cor-card: #1e1e1e;
+    --cor-texto: #e0e0e0;
+    --cor-borda: #333333;
+    --cor-acento-principal: #ff9800;
+    --cor-acento-principal-hover: #f57c00;
+    --cor-div:#242424;
+    --cor-res:#242424;
+    --sombra: rgba(0, 0, 0, 0.4);
+}
+
+body { 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    transition: background-color 0.5s, color 0.5s;    
+}
+
 header {
+    background-color: var(--cor-card);
+    color: var(--cor-texto);
+    padding: 20px;
     text-align: center;
+    box-shadow: 0 4px 8px var(--sombra);
+    transition: background-color 0.5s, color 0.5s, box-shadow 0.5s;   
+}
+
+header > h1 {
+    font-size: 2.2em;
+    color: var(--cor-acento-principal);
+}
+
+header > p {
+    justify-content: flex-end;
+    text-align: right;
+}
+
+#botao-tema {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: var(--cor-texto);
+    transition: color 0.5s;
+}
+
+#botao-tema:hover {
+    color: var(--cor-acento-principal);
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+    accent-color: var(--cor-acento-principal);
 }
 
 section {
-    background-color: aliceblue;
+    background-color: var(--cor-card);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px var(--sombra);
+    margin: 30px auto;
+    padding: 30px;
+    width: 95%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: background-color 0.5s, box-shadow 0.5s, border 0.5s;
 }
 
-div {
-    Background-color: green;
-    text-align: center;
-    display: block;   
-    margin: auto;
-    padding: 10px;    
+div#dados {
+    background-color: var(--cor-div);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transition: background-color 0.5s, border-color 0.5s;   
 }
 
-input.campo {
-    border-radius: 5px;
+p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--cor-texto);
+    transition: color 0.5s;
+}
+
+.campo {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid var(--cor-border-campo);
+    background-color: var(--cor-card);
+    color: var(--cor-texto);
+    border-radius: 6px;
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s, background-color 0.5s, color 0.5s;    
+}
+
+.campo:focus {
+    border-color: var(--cor-acento-principal);
+    box-shadow: 0 0 5px var(--cor-acento-principal);
+    outline: none;
+}
+
+input[type="button"] {
+    background-color: var(--cor-acento-principal);
+    color: var(--cor-fundo);
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    transition: background-color 0.3s, color 0.5s;
+}
+
+input[type="button"]:hover {
+    background-color: var(--cor-acento-principal-hover);
 }
 
 div#res {
-    display: block;
-    margin: auto;
-    padding: 10px;
+    background-color: var(--cor-res);
+    border-radius: 8px;
+    border: 1px solid var(--cor-borda);
+    padding: 20px;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: bolder;
+    color: var(--cor-texto);
+    line-height: 1.6;
+    margin-top: 10px;
+    transition: background-color 0.5s, color 0.5s;
 }
 
 img#foto {
+    width: 100%;
+    height: auto;
     display: block;
-    margin: auto;
-    padding: 10px;
-    border-radius: 50px;
+    
+}
+
+.foto-container {
+    width: 180px;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 20px auto 0;
+    box-shadow: 0 0px 8px 18px var(--sombra);
+    transition: box-shadow 0.5s, border 0.5s;
 }
 
 footer {
-    background-color: black;
-    color: blue;
     text-align: center;
-    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.579);
+    padding: 15px;
+    margin-top: auto;
+    background-color: var(--cor-card);
+    color: var(--cor-texto);
+    font-size: 0.9em;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+footer > p {
+    justify-content: center;
 }
 
 
