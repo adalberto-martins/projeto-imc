@@ -28,6 +28,7 @@ body.escuro {
     --cor-acento-principal-hover: #f57c00;
     --cor-div:#242424;
     --cor-res:#242424;
+    --cor-border-campo:#ccc;
     --sombra: rgba(0, 0, 0, 0.4);
 }
 
