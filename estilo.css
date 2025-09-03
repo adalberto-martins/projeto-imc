@@ -186,7 +186,19 @@ footer > p {
     justify-content: center;
 }
 
+@media screen and (min-width:768px) {
+    section {
+        display: grid;
+        grid-template-columns: auto, auto;
+    }
 
+    div {
+        justify-content: space-between;
+    }
+
+
+    
+}
 
 
 
