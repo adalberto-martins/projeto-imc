@@ -106,7 +106,6 @@ div#dados {
 
 p {
     display: flex;
-    align-items: center;
     gap: 10px;
     color: var(--cor-texto);
     transition: color 0.5s;
