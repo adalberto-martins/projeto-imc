@@ -111,6 +111,11 @@ p {
     transition: color 0.5s;
 }
 
+label {
+    font-weight: bold;
+    font-size: 1em;
+}
+
 .campo {
     flex-grow: 1;
     padding: 10px;
