@@ -179,17 +179,12 @@ img#foto {
 }
 
 footer {
-    text-align: center;
-    padding: 15px;
-    margin-top: auto;
-    background-color: var(--cor-card);
-    color: var(--cor-texto);
-    font-size: 0.9em;
-    transition: background-color 0.5s, color 0.5s;
-}
-
-footer > p {
-    justify-content: center;
+    padding: 22px 6px;
+    border-top: 1px solid rgba(10,20,30,0.4);
+    margin-top: 18px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
 }
 
 @media screen and (min-width:768px) {
