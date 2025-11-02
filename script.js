@@ -83,4 +83,18 @@ function verificar() {
         divFoto.appendChild(img);
         res.appendChild(divFoto);
     }
+
+    // --- Função para Atualizar Automaticamente o Ano de Copyright ---
+        (function() {
+            const yearElement = document.getElementById('current-year');
+            
+            // Verifica se o elemento foi encontrado na página
+            if (yearElement) {
+                // Obtém o ano atual (ex: 2025)
+                const currentYear = new Date().getFullYear();
+                
+                // Atualiza o conteúdo do elemento com o ano atual
+                yearElement.textContent = currentYear;
+            }
+})();
 }
